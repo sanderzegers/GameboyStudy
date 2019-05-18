@@ -1,0 +1,279 @@
+                              1 ;--------------------------------------------------------
+                              2 ; File Created by SDCC : FreeWare ANSI-C Compiler
+                              3 ; Version 2.3.1 Sat May  4 13:43:44 2019
+                              4 
+                              5 ;--------------------------------------------------------
+                              6 	.module lcc286140
+                              7 	
+                              8 ;--------------------------------------------------------
+                              9 ; Public variables in this module
+                             10 ;--------------------------------------------------------
+                             11 	.globl _main
+                             12 	.globl _Smiler
+                             13 ;--------------------------------------------------------
+                             14 ; special function registers
+                             15 ;--------------------------------------------------------
+                             16 ;--------------------------------------------------------
+                             17 ; special function bits 
+                             18 ;--------------------------------------------------------
+                             19 ;--------------------------------------------------------
+                             20 ; internal ram data
+                             21 ;--------------------------------------------------------
+                             22 	.area _DATA
+   0000                      23 _Smiler::
+   0000                      24 	.ds 80
+                             25 ;--------------------------------------------------------
+                             26 ; overlayable items in internal ram 
+                             27 ;--------------------------------------------------------
+                             28 	.area _OVERLAY
+                             29 ;--------------------------------------------------------
+                             30 ; indirectly addressable internal ram data
+                             31 ;--------------------------------------------------------
+                             32 	.area _ISEG
+                             33 ;--------------------------------------------------------
+                             34 ; bit data
+                             35 ;--------------------------------------------------------
+                             36 	.area _BSEG
+                             37 ;--------------------------------------------------------
+                             38 ; external ram data
+                             39 ;--------------------------------------------------------
+                             40 	.area _XSEG
+                             41 ;--------------------------------------------------------
+                             42 ; global & static initialisations
+                             43 ;--------------------------------------------------------
+                             44 	.area _GSINIT
+                             45 	.area _GSFINAL
+                             46 	.area _GSINIT
+                             47 ;	main.c 26
+                             48 ;	main.c 33
+                             49 ;	genArrayInit
+                             50 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 0 deSending: 0
+   0000 21 00 00             51 	ld	hl,#_Smiler
+   0003 CD 00 00             52 	call	__initrleblock
+   0006 50                   53 	.db	80
+   0007 00 7E 7F 81 7F A5    54 	.db	0x00, 0x7E, 0x7F, 0x81, 0x7F, 0xA5, 0x7F, 0x81
+        7F 81
+   000F 7F 99 7F A5 7F 81    55 	.db	0x7F, 0x99, 0x7F, 0xA5, 0x7F, 0x81, 0x7E, 0x7E
+        7E 7E
+   0017 00 7E 7F 81 7F A5    56 	.db	0x00, 0x7E, 0x7F, 0x81, 0x7F, 0xA5, 0x7F, 0x81
+        7F 81
+   001F 7F A5 7F 99 7F 81    57 	.db	0x7F, 0xA5, 0x7F, 0x99, 0x7F, 0x81, 0x7E, 0x7E
+        7E 7E
+   0027 00 7E 7F 81 7F A5    58 	.db	0x00, 0x7E, 0x7F, 0x81, 0x7F, 0xA5, 0x7F, 0x81
+        7F 81
+   002F 7F 81 7F BD 7F 81    59 	.db	0x7F, 0x81, 0x7F, 0xBD, 0x7F, 0x81, 0x7E, 0x7E
+        7E 7E
+   0037 00 7E 7F 81 7F A5    60 	.db	0x00, 0x7E, 0x7F, 0x81, 0x7F, 0xA5, 0x7F, 0x81
+        7F 81
+   003F 7F A1 7F 9D 7F 81    61 	.db	0x7F, 0xA1, 0x7F, 0x9D, 0x7F, 0x81, 0x7E, 0x7E
+        7E 7E
+   0047 00 7E 7F 81 7F A5    62 	.db	0x00, 0x7E, 0x7F, 0x81, 0x7F, 0xA5, 0x7F, 0x81
+        7F 81
+   004F 7F 99 7F 99 7F 81    63 	.db	0x7F, 0x99, 0x7F, 0x99, 0x7F, 0x81, 0x7E, 0x7E
+        7E 7E
+   0057 00                   64 	.db	0
+                             65 ;--------------------------------------------------------
+                             66 ; Home
+                             67 ;--------------------------------------------------------
+                             68 	.area _HOME
+                             69 	.area _CODE
+                             70 ;--------------------------------------------------------
+                             71 ; code
+                             72 ;--------------------------------------------------------
+                             73 	.area _CODE
+                             74 ;	main.c 5
+                             75 ;	genLabel
+                             76 ;	genFunction
+                             77 ;	---------------------------------
+                             78 ; Function main
+                             79 ; ---------------------------------
+   0000                      80 ___main_start:
+   0000                      81 _main:
+   0000 E8 FC                82 	lda	sp,-4(sp)
+                             83 ;	main.c 7
+                             84 ;	genAssign
+                             85 ;	AOP_STK for _main_currentSpriteIndex_1_1
+   0002 F8 03                86 	lda	hl,3(sp)
+   0004 36 00                87 	ld	(hl),#0x00
+                             88 ;	main.c 9
+                             89 ;	genIpush
+                             90 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 0 deSending: 0
+   0006 21 00 00             91 	ld	hl,#_Smiler
+   0009 E5                   92 	push	hl
+                             93 ;	genIpush
+   000A 21 00 05             94 	ld	hl,#0x0500
+   000D E5                   95 	push	hl
+                             96 ;	genCall
+   000E CD 00 00             97 	call	_set_sprite_data
+   0011 E8 04                98 	lda	sp,4(sp)
+                             99 ;	main.c 10
+                            100 ;	genIpush
+                            101 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 0 deSending: 0
+   0013 21 00 01            102 	ld	hl,#0x0100
+   0016 E5                  103 	push	hl
+                            104 ;	genCall
+   0017 CD 00 00            105 	call	_set_sprite_tile
+   001A E8 02               106 	lda	sp,2(sp)
+                            107 ;	main.c 12
+                            108 ;	genIpush
+                            109 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 0 deSending: 0
+   001C 21 58 4E            110 	ld	hl,#0x4E58
+   001F E5                  111 	push	hl
+                            112 ;	genIpush
+   0020 3E 00               113 	ld	a,#0x00
+   0022 F5                  114 	push	af
+   0023 33                  115 	inc	sp
+                            116 ;	genCall
+   0024 CD 00 00            117 	call	_move_sprite
+   0027 E8 03               118 	lda	sp,3(sp)
+                            119 ;	main.c 14
+                            120 ;	genAssign
+   0029 06 40               121 	ld	b,#0x40
+   002B 0E FF               122 	ld	c,#0xFF
+                            123 ;	genAssign
+                            124 ;	AOP_STK for _main_sloc0_1_0
+   002D F8 01               125 	lda	hl,1(sp)
+   002F 36 40               126 	ld	(hl),#0x40
+   0031 23                  127 	inc	hl
+   0032 36 FF               128 	ld	(hl),#0xFF
+                            129 ;	genPointerGet
+                            130 ;	AOP_STK for _main_sloc0_1_0
+                            131 ;	AOP_STK for _main_sloc1_1_0
+   0034 2B                  132 	dec	hl
+   0035 5E                  133 	ld	e,(hl)
+   0036 23                  134 	inc	hl
+   0037 56                  135 	ld	d,(hl)
+   0038 1A                  136 	ld	a,(de)
+   0039 2B                  137 	dec	hl
+   003A 2B                  138 	dec	hl
+                            139 ;	genOr
+                            140 ;	AOP_STK for _main_sloc1_1_0
+   003B 77                  141 	ld      (hl),a
+   003C 7F                  142 	ld      a,a
+   003D F6 02               143 	or	a,#0x02
+                            144 ;	genAssign (pointer)
+   003F 58                  145 	ld	e,b
+   0040 51                  146 	ld	d,c
+   0041 12                  147 	ld	(de),a
+                            148 ;	main.c 18
+                            149 ;	genLabel
+   0042                     150 00102$:
+                            151 ;	main.c 20
+                            152 ;	genPlus
+                            153 ;	AOP_STK for _main_currentSpriteIndex_1_1
+                            154 ;	genPlusIncr
+   0042 F8 03               155 	lda	hl,3(sp)
+   0044 4E                  156 	ld	c,(hl)
+   0045 0C                  157 	inc	c
+                            158 ;	genIpush
+                            159 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 0 deSending: 0
+   0046 3E 05               160 	ld	a,#0x05
+   0048 F5                  161 	push	af
+   0049 33                  162 	inc	sp
+                            163 ;	genIpush
+   004A 79                  164 	ld	a,c
+   004B F5                  165 	push	af
+   004C 33                  166 	inc	sp
+                            167 ;	genCall
+   004D CD 00 00            168 	call	__moduchar_rrx_s
+   0050 4B                  169 	ld	c,e
+   0051 E8 02               170 	lda	sp,2(sp)
+                            171 ;	genAssign
+                            172 ;	AOP_STK for _main_currentSpriteIndex_1_1
+   0053 F8 03               173 	lda	hl,3(sp)
+   0055 71                  174 	ld	(hl),c
+                            175 ;	main.c 21
+                            176 ;	genCast
+                            177 ;	AOP_STK for _main_currentSpriteIndex_1_1
+   0056 4E                  178 	ld	c,(hl)
+   0057 7E                  179 	ld	a,(hl)
+   0058 17                  180 	rla	
+   0059 9F                  181 	sbc	a,a
+   005A 47                  182 	ld	b,a
+                            183 ;	genIpush
+                            184 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 0 deSending: 0
+   005B C5                  185 	push	bc
+                            186 ;	genIpush
+   005C 21 8F 00            187 	ld	hl,#__str_0
+   005F E5                  188 	push	hl
+                            189 ;	genCall
+   0060 CD 00 00            190 	call	_printf
+   0063 E8 04               191 	lda	sp,4(sp)
+                            192 ;	main.c 23
+                            193 ;	genIpush
+                            194 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 0 deSending: 0
+                            195 ;	AOP_STK for _main_currentSpriteIndex_1_1
+   0065 F8 03               196 	lda	hl,3(sp)
+   0067 7E                  197 	ld	a,(hl)
+   0068 F5                  198 	push	af
+   0069 33                  199 	inc	sp
+                            200 ;	genIpush
+   006A 3E 00               201 	ld	a,#0x00
+   006C F5                  202 	push	af
+   006D 33                  203 	inc	sp
+                            204 ;	genCall
+   006E CD 00 00            205 	call	_set_sprite_tile
+   0071 E8 02               206 	lda	sp,2(sp)
+                            207 ;	main.c 25
+                            208 ;	genIpush
+                            209 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 0 deSending: 0
+   0073 21 02 00            210 	ld	hl,#0x0002
+   0076 E5                  211 	push	hl
+                            212 ;	genIpush
+   0077 3E 00               213 	ld	a,#0x00
+   0079 F5                  214 	push	af
+   007A 33                  215 	inc	sp
+                            216 ;	genCall
+   007B CD 00 00            217 	call	_scroll_sprite
+   007E E8 03               218 	lda	sp,3(sp)
+                            219 ;	main.c 27
+                            220 ;	genIpush
+                            221 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 0 deSending: 0
+   0080 21 C8 00            222 	ld	hl,#0x00C8
+   0083 E5                  223 	push	hl
+                            224 ;	genCall
+   0084 CD 00 00            225 	call	_delay
+   0087 E8 02               226 	lda	sp,2(sp)
+                            227 ;	genGoto
+   0089 C3 42 00            228 	jp	00102$
+                            229 ;	genLabel
+   008C                     230 00104$:
+                            231 ;	genEndFunction
+   008C E8 04               232 	lda	sp,4(sp)
+   008E C9                  233 	ret
+   008F                     234 ___main_end:
+   008F                     235 __str_0:
+   008F 25 64 20            236 	.ascii "%d "
+   0092 00                  237 	.db 0x00
+                            238 	.area _CODE
+ASxxxx Assembler V01.75  (GameBoy Z80-like CPU), page 1.
+
+Symbol Table
+
+  1 _Smiler                            0000 GR
+  0 ___main_end                        008F R
+  0 ___main_start                      0000 R
+    __initrleblock                     **** GX
+    __moduchar_rrx_s                   **** GX
+  0 __str_0                            008F R
+    _delay                             **** GX
+  0 _main                              0000 GR
+    _move_sprite                       **** GX
+    _printf                            **** GX
+    _scroll_sprite                     **** GX
+    _set_sprite_data                   **** GX
+    _set_sprite_tile                   **** GX
+
+ASxxxx Assembler V01.75  (GameBoy Z80-like CPU), page 2.
+
+Area Table
+
+   0 _CODE                              size   93   flags 0
+   1 _DATA                              size   50   flags 0
+   2 _OVERLAY                           size    0   flags 0
+   3 _ISEG                              size    0   flags 0
+   4 _BSEG                              size    0   flags 0
+   5 _XSEG                              size    0   flags 0
+   6 _GSINIT                            size   58   flags 0
+   7 _GSFINAL                           size    0   flags 0
+   8 _HOME                              size    0   flags 0

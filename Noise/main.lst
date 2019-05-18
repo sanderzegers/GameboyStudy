@@ -1,0 +1,281 @@
+                              1 ;--------------------------------------------------------
+                              2 ; File Created by SDCC : FreeWare ANSI-C Compiler
+                              3 ; Version 2.3.1 Mon May  6 12:49:56 2019
+                              4 
+                              5 ;--------------------------------------------------------
+                              6 	.module lcc607760
+                              7 	
+                              8 ;--------------------------------------------------------
+                              9 ; Public variables in this module
+                             10 ;--------------------------------------------------------
+                             11 	.globl _main
+                             12 ;--------------------------------------------------------
+                             13 ; special function registers
+                             14 ;--------------------------------------------------------
+                             15 ;--------------------------------------------------------
+                             16 ; special function bits 
+                             17 ;--------------------------------------------------------
+                             18 ;--------------------------------------------------------
+                             19 ; internal ram data
+                             20 ;--------------------------------------------------------
+                             21 	.area _DATA
+                             22 ;--------------------------------------------------------
+                             23 ; overlayable items in internal ram 
+                             24 ;--------------------------------------------------------
+                             25 	.area _OVERLAY
+                             26 ;--------------------------------------------------------
+                             27 ; indirectly addressable internal ram data
+                             28 ;--------------------------------------------------------
+                             29 	.area _ISEG
+                             30 ;--------------------------------------------------------
+                             31 ; bit data
+                             32 ;--------------------------------------------------------
+                             33 	.area _BSEG
+                             34 ;--------------------------------------------------------
+                             35 ; external ram data
+                             36 ;--------------------------------------------------------
+                             37 	.area _XSEG
+                             38 ;--------------------------------------------------------
+                             39 ; global & static initialisations
+                             40 ;--------------------------------------------------------
+                             41 	.area _GSINIT
+                             42 	.area _GSFINAL
+                             43 	.area _GSINIT
+                             44 ;--------------------------------------------------------
+                             45 ; Home
+                             46 ;--------------------------------------------------------
+                             47 	.area _HOME
+                             48 	.area _CODE
+                             49 ;--------------------------------------------------------
+                             50 ; code
+                             51 ;--------------------------------------------------------
+                             52 	.area _CODE
+                             53 ;	main.c 4
+                             54 ;	genLabel
+                             55 ;	genFunction
+                             56 ;	---------------------------------
+                             57 ; Function main
+                             58 ; ---------------------------------
+   0000                      59 ___main_start:
+   0000                      60 _main:
+                             61 	
+                             62 ;	main.c 11
+                             63 ;	genAssign
+   0000 01 26 FF             64 	ld	bc,#0xFF26
+                             65 ;	genAssign (pointer)
+   0003 3E 80                66 	ld	a,#0x80
+   0005 02                   67 	ld	(bc),a
+                             68 ;	main.c 12
+                             69 ;	genAssign
+   0006 01 24 FF             70 	ld	bc,#0xFF24
+                             71 ;	genAssign (pointer)
+   0009 3E 77                72 	ld	a,#0x77
+   000B 02                   73 	ld	(bc),a
+                             74 ;	main.c 13
+                             75 ;	genAssign
+   000C 01 25 FF             76 	ld	bc,#0xFF25
+                             77 ;	genAssign (pointer)
+   000F 3E FF                78 	ld	a,#0xFF
+   0011 02                   79 	ld	(bc),a
+                             80 ;	main.c 16
+                             81 ;	genLabel
+   0012                      82 00107$:
+                             83 ;	main.c 19
+                             84 ;	genCall
+                             85 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 0 deSending: 0
+   0012 CD 00 00             86 	call	_joypad
+   0015 4B                   87 	ld	c,e
+                             88 ;	genCmpEq
+                             89 ; genCmpEq: left 1, right 1, result 0
+   0016 79                   90 	ld	a,c
+   0017 FE 01                91 	cp	a,#0x01
+   0019 CA 41 00             92 	jp	z,00102$
+   001C                      93 00116$:
+                             94 ;	genCmpEq
+                             95 ; genCmpEq: left 1, right 1, result 0
+   001C 79                   96 	ld	a,c
+   001D FE 02                97 	cp	a,#0x02
+   001F CA 31 00             98 	jp	z,00101$
+   0022                      99 00117$:
+                            100 ;	genCmpEq
+                            101 ; genCmpEq: left 1, right 1, result 0
+   0022 79                  102 	ld	a,c
+   0023 FE 04               103 	cp	a,#0x04
+   0025 CA 51 00            104 	jp	z,00103$
+   0028                     105 00118$:
+                            106 ;	genCmpEq
+                            107 ; genCmpEq: left 1, right 1, result 0
+   0028 79                  108 	ld	a,c
+   0029 FE 08               109 	cp	a,#0x08
+   002B CA 7B 00            110 	jp	z,00104$
+   002E                     111 00119$:
+                            112 ;	genGoto
+   002E C3 9C 00            113 	jp	00105$
+                            114 ;	main.c 22
+                            115 ;	genLabel
+   0031                     116 00101$:
+                            117 ;	genIpush
+                            118 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 0 deSending: 0
+   0031 21 FF 00            119 	ld	hl,#0x00FF
+   0034 E5                  120 	push	hl
+                            121 ;	genIpush
+   0035 3E 00               122 	ld	a,#0x00
+   0037 F5                  123 	push	af
+   0038 33                  124 	inc	sp
+                            125 ;	genCall
+   0039 CD 00 00            126 	call	_scroll_sprite
+   003C E8 03               127 	lda	sp,3(sp)
+                            128 ;	main.c 23
+                            129 ;	genGoto
+   003E C3 9C 00            130 	jp	00105$
+                            131 ;	main.c 25
+                            132 ;	genLabel
+   0041                     133 00102$:
+                            134 ;	genIpush
+                            135 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 0 deSending: 0
+   0041 21 01 00            136 	ld	hl,#0x0001
+   0044 E5                  137 	push	hl
+                            138 ;	genIpush
+   0045 3E 00               139 	ld	a,#0x00
+   0047 F5                  140 	push	af
+   0048 33                  141 	inc	sp
+                            142 ;	genCall
+   0049 CD 00 00            143 	call	_scroll_sprite
+   004C E8 03               144 	lda	sp,3(sp)
+                            145 ;	main.c 26
+                            146 ;	genGoto
+   004E C3 9C 00            147 	jp	00105$
+                            148 ;	main.c 28
+                            149 ;	genLabel
+   0051                     150 00103$:
+                            151 ;	genIpush
+                            152 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 0 deSending: 0
+   0051 21 A9 00            153 	ld	hl,#__str_0
+   0054 E5                  154 	push	hl
+                            155 ;	genCall
+   0055 CD 00 00            156 	call	_printf
+   0058 E8 02               157 	lda	sp,2(sp)
+                            158 ;	main.c 29
+                            159 ;	genAssign
+   005A 01 10 FF            160 	ld	bc,#0xFF10
+                            161 ;	genAssign (pointer)
+   005D 3E 16               162 	ld	a,#0x16
+   005F 02                  163 	ld	(bc),a
+                            164 ;	main.c 30
+                            165 ;	genAssign
+   0060 01 11 FF            166 	ld	bc,#0xFF11
+                            167 ;	genAssign (pointer)
+   0063 3E 40               168 	ld	a,#0x40
+   0065 02                  169 	ld	(bc),a
+                            170 ;	main.c 31
+                            171 ;	genAssign
+   0066 01 12 FF            172 	ld	bc,#0xFF12
+                            173 ;	genAssign (pointer)
+   0069 3E 73               174 	ld	a,#0x73
+   006B 02                  175 	ld	(bc),a
+                            176 ;	main.c 32
+                            177 ;	genAssign
+   006C 01 13 FF            178 	ld	bc,#0xFF13
+                            179 ;	genAssign (pointer)
+   006F 3E 00               180 	ld	a,#0x00
+   0071 02                  181 	ld	(bc),a
+                            182 ;	main.c 33
+                            183 ;	genAssign
+   0072 01 14 FF            184 	ld	bc,#0xFF14
+                            185 ;	genAssign (pointer)
+   0075 3E C3               186 	ld	a,#0xC3
+   0077 02                  187 	ld	(bc),a
+                            188 ;	main.c 34
+                            189 ;	genGoto
+   0078 C3 9C 00            190 	jp	00105$
+                            191 ;	main.c 36
+                            192 ;	genLabel
+   007B                     193 00104$:
+                            194 ;	genIpush
+                            195 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 0 deSending: 0
+   007B 21 B5 00            196 	ld	hl,#__str_1
+   007E E5                  197 	push	hl
+                            198 ;	genCall
+   007F CD 00 00            199 	call	_printf
+   0082 E8 02               200 	lda	sp,2(sp)
+                            201 ;	main.c 37
+                            202 ;	genAssign
+   0084 01 20 FF            203 	ld	bc,#0xFF20
+                            204 ;	genAssign (pointer)
+   0087 3E 1F               205 	ld	a,#0x1F
+   0089 02                  206 	ld	(bc),a
+                            207 ;	main.c 38
+                            208 ;	genAssign
+   008A 01 21 FF            209 	ld	bc,#0xFF21
+                            210 ;	genAssign (pointer)
+   008D 3E F1               211 	ld	a,#0xF1
+   008F 02                  212 	ld	(bc),a
+                            213 ;	main.c 39
+                            214 ;	genAssign
+   0090 01 22 FF            215 	ld	bc,#0xFF22
+                            216 ;	genAssign (pointer)
+   0093 3E 30               217 	ld	a,#0x30
+   0095 02                  218 	ld	(bc),a
+                            219 ;	main.c 40
+                            220 ;	genAssign
+   0096 01 23 FF            221 	ld	bc,#0xFF23
+                            222 ;	genAssign (pointer)
+   0099 3E C0               223 	ld	a,#0xC0
+   009B 02                  224 	ld	(bc),a
+                            225 ;	main.c 44
+                            226 ;	genLabel
+   009C                     227 00105$:
+                            228 ;	main.c 47
+                            229 ;	genIpush
+                            230 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 0 deSending: 0
+   009C 21 E8 03            231 	ld	hl,#0x03E8
+   009F E5                  232 	push	hl
+                            233 ;	genCall
+   00A0 CD 00 00            234 	call	_delay
+   00A3 E8 02               235 	lda	sp,2(sp)
+                            236 ;	genGoto
+   00A5 C3 12 00            237 	jp	00107$
+                            238 ;	genLabel
+   00A8                     239 00109$:
+                            240 ;	genEndFunction
+                            241 	
+   00A8 C9                  242 	ret
+   00A9                     243 ___main_end:
+   00A9                     244 __str_0:
+   00A9 75 70 20 70 72 65   245 	.ascii "up pressed"
+        73 73 65 64
+   00B3 0A                  246 	.db 0x0A
+   00B4 00                  247 	.db 0x00
+   00B5                     248 __str_1:
+   00B5 64 6F 77 6E 20 70   249 	.ascii "down pressed"
+        72 65 73 73 65 64
+   00C1 0A                  250 	.db 0x0A
+   00C2 00                  251 	.db 0x00
+                            252 	.area _CODE
+ASxxxx Assembler V01.75  (GameBoy Z80-like CPU), page 1.
+
+Symbol Table
+
+  0 ___main_end                        00A9 R
+  0 ___main_start                      0000 R
+  0 __str_0                            00A9 R
+  0 __str_1                            00B5 R
+    _delay                             **** GX
+    _joypad                            **** GX
+  0 _main                              0000 GR
+    _printf                            **** GX
+    _scroll_sprite                     **** GX
+
+ASxxxx Assembler V01.75  (GameBoy Z80-like CPU), page 2.
+
+Area Table
+
+   0 _CODE                              size   C3   flags 0
+   1 _DATA                              size    0   flags 0
+   2 _OVERLAY                           size    0   flags 0
+   3 _ISEG                              size    0   flags 0
+   4 _BSEG                              size    0   flags 0
+   5 _XSEG                              size    0   flags 0
+   6 _GSINIT                            size    0   flags 0
+   7 _GSFINAL                           size    0   flags 0
+   8 _HOME                              size    0   flags 0

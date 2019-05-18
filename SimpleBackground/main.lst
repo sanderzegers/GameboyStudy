@@ -1,0 +1,261 @@
+                              1 ;--------------------------------------------------------
+                              2 ; File Created by SDCC : FreeWare ANSI-C Compiler
+                              3 ; Version 2.3.1 Sun May  5 06:17:08 2019
+                              4 
+                              5 ;--------------------------------------------------------
+                              6 	.module lcc310760
+                              7 	
+                              8 ;--------------------------------------------------------
+                              9 ; Public variables in this module
+                             10 ;--------------------------------------------------------
+                             11 	.globl _main
+                             12 	.globl _backgroundtiles
+                             13 	.globl _backgroundmap
+                             14 ;--------------------------------------------------------
+                             15 ; special function registers
+                             16 ;--------------------------------------------------------
+                             17 ;--------------------------------------------------------
+                             18 ; special function bits 
+                             19 ;--------------------------------------------------------
+                             20 ;--------------------------------------------------------
+                             21 ; internal ram data
+                             22 ;--------------------------------------------------------
+                             23 	.area _DATA
+   0000                      24 _backgroundmap::
+   0000                      25 	.ds 720
+   02D0                      26 _backgroundtiles::
+   02D0                      27 	.ds 96
+                             28 ;--------------------------------------------------------
+                             29 ; overlayable items in internal ram 
+                             30 ;--------------------------------------------------------
+                             31 	.area _OVERLAY
+                             32 ;--------------------------------------------------------
+                             33 ; indirectly addressable internal ram data
+                             34 ;--------------------------------------------------------
+                             35 	.area _ISEG
+                             36 ;--------------------------------------------------------
+                             37 ; bit data
+                             38 ;--------------------------------------------------------
+                             39 	.area _BSEG
+                             40 ;--------------------------------------------------------
+                             41 ; external ram data
+                             42 ;--------------------------------------------------------
+                             43 	.area _XSEG
+                             44 ;--------------------------------------------------------
+                             45 ; global & static initialisations
+                             46 ;--------------------------------------------------------
+                             47 	.area _GSINIT
+                             48 	.area _GSFINAL
+                             49 	.area _GSINIT
+                             50 ;	main.c 25
+                             51 ;	main.c 22
+                             52 ;	genArrayInit
+                             53 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 0 deSending: 0
+   0000 21 00 00             54 	ld	hl,#_backgroundmap
+   0003 CD 00 00             55 	call	__initrleblock
+   0006 81 00                56 	.db	-127,0x00
+   0008 81 00                57 	.db	-127,0x00
+   000A 81 00                58 	.db	-127,0x00
+   000C E6 00                59 	.db	-26,0x00
+   000E 08                   60 	.db	8
+   000F 03 03 03 02 00 00    61 	.db	0x03, 0x03, 0x03, 0x02, 0x00, 0x00, 0x03, 0x02
+        03 02
+   0017 E0 00                62 	.db	-32,0x00
+   0019 08                   63 	.db	8
+   001A 03 03 03 02 00 00    64 	.db	0x03, 0x03, 0x03, 0x02, 0x00, 0x00, 0x03, 0x02
+        03 02
+   0022 E7 00                65 	.db	-25,0x00
+   0024 03                   66 	.db	3
+   0025 05 05 05             67 	.db	0x05, 0x05, 0x05
+   0028 F9 03                68 	.db	-7,0x03
+   002A 05                   69 	.db	5
+   002B 02 05 05 03 02       70 	.db	0x02, 0x05, 0x05, 0x03, 0x02
+   0030 E7 05                71 	.db	-25,0x05
+   0032 81 04                72 	.db	-127,0x04
+   0034 B7 04                73 	.db	-73,0x04
+   0036 00                   74 	.db	0
+                             75 ;	main.c 26
+                             76 ;	main.c 22
+                             77 ;	genArrayInit
+                             78 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 0 deSending: 0
+   0037 21 D0 02             79 	ld	hl,#_backgroundtiles
+   003A CD 00 00             80 	call	__initrleblock
+   003D F0 00                81 	.db	-16,0x00
+   003F 02                   82 	.db	2
+   0040 FF FF                83 	.db	0xFF, 0xFF
+   0042 FA 01                84 	.db	-6,0x01
+   0044 02                   85 	.db	2
+   0045 FF FF                86 	.db	0xFF, 0xFF
+   0047 FA 10                87 	.db	-6,0x10
+   0049 02                   88 	.db	2
+   004A FF FF                89 	.db	0xFF, 0xFF
+   004C FA 01                90 	.db	-6,0x01
+   004E 02                   91 	.db	2
+   004F FF FF                92 	.db	0xFF, 0xFF
+   0051 FA 11                93 	.db	-6,0x11
+   0053 02                   94 	.db	2
+   0054 FF FF                95 	.db	0xFF, 0xFF
+   0056 FA 80                96 	.db	-6,0x80
+   0058 02                   97 	.db	2
+   0059 FF FF                98 	.db	0xFF, 0xFF
+   005B FA 90                99 	.db	-6,0x90
+   005D 0F                  100 	.db	15
+   005E AA 00 55 00 AA 00   101 	.db	0xAA, 0x00, 0x55, 0x00, 0xAA, 0x00, 0x55, 0x00
+        55 00
+   0066 AA 00 55 00 AA 00   102 	.db	0xAA, 0x00, 0x55, 0x00, 0xAA, 0x00, 0x55
+        55
+   006D F5 00               103 	.db	-11,0x00
+   006F 06                  104 	.db	6
+   0070 09 00 49 12 76 DF   105 	.db	0x09, 0x00, 0x49, 0x12, 0x76, 0xDF
+   0076 00                  106 	.db	0
+                            107 ;--------------------------------------------------------
+                            108 ; Home
+                            109 ;--------------------------------------------------------
+                            110 	.area _HOME
+                            111 	.area _CODE
+                            112 ;--------------------------------------------------------
+                            113 ; code
+                            114 ;--------------------------------------------------------
+                            115 	.area _CODE
+                            116 ;	main.c 6
+                            117 ;	genLabel
+                            118 ;	genFunction
+                            119 ;	---------------------------------
+                            120 ; Function main
+                            121 ; ---------------------------------
+   0000                     122 ___main_start:
+   0000                     123 _main:
+   0000 E8 FD               124 	lda	sp,-3(sp)
+                            125 ;	main.c 8
+                            126 ;	genIpush
+                            127 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 0 deSending: 0
+   0002 21 D0 02            128 	ld	hl,#_backgroundtiles
+   0005 E5                  129 	push	hl
+                            130 ;	genIpush
+   0006 21 00 06            131 	ld	hl,#0x0600
+   0009 E5                  132 	push	hl
+                            133 ;	genCall
+   000A CD 00 00            134 	call	_set_bkg_data
+   000D E8 04               135 	lda	sp,4(sp)
+                            136 ;	main.c 9
+                            137 ;	genIpush
+                            138 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 0 deSending: 0
+   000F 21 00 00            139 	ld	hl,#_backgroundmap
+   0012 E5                  140 	push	hl
+                            141 ;	genIpush
+   0013 21 28 12            142 	ld	hl,#0x1228
+   0016 E5                  143 	push	hl
+                            144 ;	genIpush
+   0017 21 00 00            145 	ld	hl,#0x0000
+   001A E5                  146 	push	hl
+                            147 ;	genCall
+   001B CD 00 00            148 	call	_set_bkg_tiles
+   001E E8 06               149 	lda	sp,6(sp)
+                            150 ;	main.c 12
+                            151 ;	genAssign
+   0020 01 40 FF            152 	ld	bc,#0xFF40
+                            153 ;	genAssign
+                            154 ;	AOP_STK for _main_sloc0_1_0
+   0023 F8 01               155 	lda	hl,1(sp)
+   0025 36 40               156 	ld	(hl),#0x40
+   0027 23                  157 	inc	hl
+   0028 36 FF               158 	ld	(hl),#0xFF
+                            159 ;	genPointerGet
+                            160 ;	AOP_STK for _main_sloc0_1_0
+                            161 ;	AOP_STK for _main_sloc1_1_0
+   002A 2B                  162 	dec	hl
+   002B 5E                  163 	ld	e,(hl)
+   002C 23                  164 	inc	hl
+   002D 56                  165 	ld	d,(hl)
+   002E 1A                  166 	ld	a,(de)
+   002F 2B                  167 	dec	hl
+   0030 2B                  168 	dec	hl
+                            169 ;	genOr
+                            170 ;	AOP_STK for _main_sloc1_1_0
+   0031 77                  171 	ld      (hl),a
+   0032 7F                  172 	ld      a,a
+   0033 F6 01               173 	or	a,#0x01
+                            174 ;	genAssign (pointer)
+   0035 02                  175 	ld	(bc),a
+                            176 ;	main.c 13
+                            177 ;	genAssign
+   0036 01 40 FF            178 	ld	bc,#0xFF40
+                            179 ;	genAssign
+                            180 ;	AOP_STK for _main_sloc0_1_0
+   0039 23                  181 	inc	hl
+   003A 36 40               182 	ld	(hl),#0x40
+   003C 23                  183 	inc	hl
+   003D 36 FF               184 	ld	(hl),#0xFF
+                            185 ;	genPointerGet
+                            186 ;	AOP_STK for _main_sloc0_1_0
+                            187 ;	AOP_STK for _main_sloc1_1_0
+   003F 2B                  188 	dec	hl
+   0040 5E                  189 	ld	e,(hl)
+   0041 23                  190 	inc	hl
+   0042 56                  191 	ld	d,(hl)
+   0043 1A                  192 	ld	a,(de)
+   0044 2B                  193 	dec	hl
+   0045 2B                  194 	dec	hl
+                            195 ;	genOr
+                            196 ;	AOP_STK for _main_sloc1_1_0
+   0046 77                  197 	ld      (hl),a
+   0047 7F                  198 	ld      a,a
+   0048 F6 80               199 	or	a,#0x80
+                            200 ;	genAssign (pointer)
+   004A 02                  201 	ld	(bc),a
+                            202 ;	main.c 16
+                            203 ;	genLabel
+   004B                     204 00102$:
+                            205 ;	main.c 17
+                            206 ;	genIpush
+                            207 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 0 deSending: 0
+   004B 21 01 00            208 	ld	hl,#0x0001
+   004E E5                  209 	push	hl
+                            210 ;	genCall
+   004F CD 00 00            211 	call	_scroll_bkg
+   0052 E8 02               212 	lda	sp,2(sp)
+                            213 ;	main.c 18
+                            214 ;	genIpush
+                            215 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 0 deSending: 0
+   0054 21 64 00            216 	ld	hl,#0x0064
+   0057 E5                  217 	push	hl
+                            218 ;	genCall
+   0058 CD 00 00            219 	call	_delay
+   005B E8 02               220 	lda	sp,2(sp)
+                            221 ;	genGoto
+   005D C3 4B 00            222 	jp	00102$
+                            223 ;	genLabel
+   0060                     224 00104$:
+                            225 ;	genEndFunction
+   0060 E8 03               226 	lda	sp,3(sp)
+   0062 C9                  227 	ret
+   0063                     228 ___main_end:
+                            229 	.area _CODE
+ASxxxx Assembler V01.75  (GameBoy Z80-like CPU), page 1.
+
+Symbol Table
+
+  0 ___main_end                        0063 R
+  0 ___main_start                      0000 R
+    __initrleblock                     **** GX
+  1 _backgroundmap                     0000 GR
+  1 _backgroundtiles                   02D0 GR
+    _delay                             **** GX
+  0 _main                              0000 GR
+    _scroll_bkg                        **** GX
+    _set_bkg_data                      **** GX
+    _set_bkg_tiles                     **** GX
+
+ASxxxx Assembler V01.75  (GameBoy Z80-like CPU), page 2.
+
+Area Table
+
+   0 _CODE                              size   63   flags 0
+   1 _DATA                              size  330   flags 0
+   2 _OVERLAY                           size    0   flags 0
+   3 _ISEG                              size    0   flags 0
+   4 _BSEG                              size    0   flags 0
+   5 _XSEG                              size    0   flags 0
+   6 _GSINIT                            size   77   flags 0
+   7 _GSFINAL                           size    0   flags 0
+   8 _HOME                              size    0   flags 0
