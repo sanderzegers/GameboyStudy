@@ -41,8 +41,6 @@ void performantdelay(UINT8 numloops){
     }
 }
 
-
-
 void setupPlayer(){
     player.x = 80;
     player.y = 130;
