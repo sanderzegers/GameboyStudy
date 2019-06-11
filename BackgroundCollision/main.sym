@@ -1,0 +1,122 @@
+; no$gmb format .sym file
+; Generated automagically by ASxxxx linker V01.75 (SDK 3.0.0)
+; Area: .  .ABS.
+00:0000 s__HEADER
+00:0000 .init
+00:0200 s__CODE
+00:03D5 s__HOME
+00:05A8 s__BASE
+00:074B s__LIT
+00:074B s__GSINIT
+00:089D s__GSINITTAIL
+00:089E s__GSFINAL
+00:C000 .OAM
+00:C0A0 s__DATA
+00:C236 s__BSS
+00:C28F s__HEAP
+00:C28F s__BSEG
+00:C28F s__ISEG
+00:C28F s__XSEG
+00:C28F s__OVERLAY
+00:E000 .STACK
+00:FF80 .refresh_OAM
+; Area: _CODE
+00:0200 _performantdelay
+00:0214 _main
+; Area: _HEADER
+00:01D2 _exit
+; Area: _HOME
+00:03D5 .set_mode
+00:03E5 .remove_VBL
+00:03EB .remove_LCD
+00:03F1 .remove_TIM
+00:03F7 .remove_SIO
+00:03FD .remove_JOY
+00:0403 .add_VBL
+00:0409 .add_LCD
+00:040F .add_TIM
+00:0415 .add_SIO
+00:041B .add_JOY
+00:0421 .remove_int
+00:0441 .add_int
+00:045D .wait_vbl_done
+00:045D _wait_vbl_done
+00:0474 _display_off
+00:0474 .display_off
+00:0495 .serial_IO
+00:04C4 _mode
+00:04CD _get_mode
+00:04D2 _enable_interrupts
+00:04D4 _disable_interrupts
+00:04D6 _reset
+00:04D6 .reset
+00:04DC _set_interrupts
+00:04E7 _remove_VBL
+00:04F2 _remove_LCD
+00:04FD _remove_TIM
+00:0508 _remove_SIO
+00:0513 _remove_JOY
+00:051E _add_VBL
+00:0529 _add_LCD
+00:0534 _add_TIM
+00:053F _add_SIO
+00:054A _add_JOY
+00:0555 _clock
+00:055E __printTStates
+00:055F banked_call
+00:0578 banked_ret
+00:0581 __initrleblock
+; Area: _BASE
+00:05A8 .mv_sprite
+00:05B7 _move_sprite
+00:05C4 _set_win_data
+00:05C4 _set_bkg_data
+00:0611 _set_sprite_data
+00:0640 .padup
+00:0640 _waitpadup
+00:0650 .jpad
+00:067D .wait_pad
+00:0684 _joypad
+00:0689 _waitpad
+00:0693 .set_sprite_tile
+00:06A0 _set_sprite_tile
+00:06AB .copy_vram
+00:06BA _get_data
+00:06BA _set_data
+00:06CD _set_bkg_tiles
+00:06E1 .set_xy_wtt
+00:06F2 .set_xy_btt
+00:0701 .set_xy_tt
+00:0732 _set_tiles
+; Area: _LIT
+; Area: _GSINIT
+00:074B gsinit
+; Area: _GSINITTAIL
+; Area: _GSFINAL
+; Area: _DATA
+00:C0A0 _MazeSprites
+00:C0E0 _MazeMap
+00:C223 _PlayerSprite
+00:C233 _spritesize
+00:C234 _playerlocation
+; Area: _BSS
+00:C236 __cpu
+00:C237 .mode
+00:C238 __io_out
+00:C239 __io_in
+00:C23A __io_status
+00:C23B .vbl_done
+00:C23C __current_bank
+00:C23D _sys_time
+00:C23D .sys_time
+00:C23F .int_0x40
+00:C24F .int_0x48
+00:C25F .int_0x50
+00:C26F .int_0x58
+00:C27F .int_0x60
+; Area: _HEAP
+00:C28F _malloc_heap_start
+; Area: _OVERLAY
+; Area: _ISEG
+; Area: _BSEG
+; Area: _XSEG
