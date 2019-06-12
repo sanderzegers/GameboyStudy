@@ -7,7 +7,7 @@
  Info:
    Section       : 
    Bank          : 0
-   Map size      : 19 x 17
+   Map size      : 20 x 18
    Tile set      : Z:\home\vmware\gbtd22\mazesprize.gbr
    Plane count   : 1 plane (8 bits)
    Plane order   : Tiles are continues
@@ -18,8 +18,8 @@
 
 */
 
-#define MazeMapWidth 19
-#define MazeMapHeight 17
+#define MazeMapWidth 20
+#define MazeMapHeight 18
 #define MazeMapBank 0
 
 extern unsigned char MazeMap[];

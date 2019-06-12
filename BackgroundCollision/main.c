@@ -25,16 +25,65 @@ void performantdelay(UINT8 numloops){
 }
 
 
+void animatesprite(UINT8 spriteIndex, INT8 movex, INT8 movey){
+   
+    move_sprite(0,playerlocation[0],playerlocation[1]);
+
+    while(movex>0){
+        playerlocation[0]+=1;
+        movex-=1;
+        move_sprite(0,playerlocation[0],playerlocation[1]);
+        performantdelay(1);
+    }
+
+    while(movex<0){
+        playerlocation[0]-=1;
+        movex+=1;
+        move_sprite(0,playerlocation[0],playerlocation[1]);
+        performantdelay(1);
+    }
+
+    while(movey>0){
+        playerlocation[1]+=1;
+        movey-=1;
+        move_sprite(0,playerlocation[0],playerlocation[1]);
+        performantdelay(1);
+    }
+
+    while(movey<0){
+        playerlocation[1]-=1;
+        movey+=1;
+        move_sprite(0,playerlocation[0],playerlocation[1]);
+        performantdelay(1);
+    }
+}
+
+UBYTE canplayermove(UINT8 newplayerx, UINT8 newplayery){
+    UINT16 indexTLx, indexTLy, tileindexTL;
+
+    indexTLx = (newplayerx-8) / 8;
+    indexTLy = (newplayery-16) / 8;
+    tileindexTL = 20 * indexTLy + indexTLx;
+
+    //printf("indexTLx %d, indexTLy %d\n",indexTLx,indexTLy);
+
+    //printf("%d",MazeMap[indexTLx*indexTLy]);
+
+    if (MazeMap[tileindexTL] == 0){
+        return 1;
+    }
+        return 0;
+}
 
 
 void main(){
 
- //set_sprite_data(0,8,plainsGraphics);
+//set_sprite_data(0,8,plainsGraphics);
 
 //    setupPlayer();
 
 set_bkg_data(0,4, MazeSprites);
-set_bkg_tiles(0,0,19,17, MazeMap);
+set_bkg_tiles(0,0,20,18, MazeMap);
 
 set_sprite_data(0,1,PlayerSprite);
 set_sprite_tile(0,0);
@@ -55,25 +104,37 @@ move_sprite(0,playerlocation[0],playerlocation[1]);
     
     switch(joypad()){
         case J_LEFT:
-            playerlocation[0] -= 8;
-            move_sprite(0,playerlocation[0],playerlocation[1]);
-            performantdelay(5);
+            if(canplayermove(playerlocation[0]-8,playerlocation[1])){
+                //playerlocation[0] -= 8;
+                //move_sprite(0,playerlocation[0],playerlocation[1]);
+                
+                animatesprite(0,-8,0);
+            }
+            //performantdelay(2);
             break;
         case J_RIGHT:
-            playerlocation[0] += 8;
-            move_sprite(0,playerlocation[0],playerlocation[1]);
-            performantdelay(5);
+            if(canplayermove(playerlocation[0]+8,playerlocation[1])){
+                //playerlocation[0] += 8;
+                //move_sprite(0,playerlocation[0],playerlocation[1]);
+                animatesprite(0,8,0);
+                }
+            //performantdelay(2);
             break;
         case J_UP:
-            playerlocation[1] -= 8;
-            move_sprite(0,playerlocation[0],playerlocation[1]);
-            performantdelay(5);
+            if(canplayermove(playerlocation[0],playerlocation[1]-8)){
+                //playerlocation[1] -= 8;
+                //move_sprite(0,playerlocation[0],playerlocation[1]);
+                animatesprite(0,0,-8);
+                }
+            //performantdelay(2);
             break;
         
         case J_DOWN:
-            playerlocation[1] += 8;
-            move_sprite(0,playerlocation[0],playerlocation[1]);
-            performantdelay(5);
+            if (canplayermove(playerlocation[0],playerlocation[1]+8)){
+                //playerlocation[1] += 8;
+                //move_sprite(0,playerlocation[0],playerlocation[1]);
+                animatesprite(0,0,8);}
+            //performantdelay(2);
             break;
         case J_A:
             break;
