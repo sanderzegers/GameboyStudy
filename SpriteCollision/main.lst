@@ -1,9 +1,9 @@
                               1 ;--------------------------------------------------------
                               2 ; File Created by SDCC : FreeWare ANSI-C Compiler
-                              3 ; Version 2.3.1 Sat May 18 14:46:35 2019
+                              3 ; Version 2.3.1 Thu Jun 13 13:01:51 2019
                               4 
                               5 ;--------------------------------------------------------
-                              6 	.module lcc1041160
+                              6 	.module lcc254280
                               7 	
                               8 ;--------------------------------------------------------
                               9 ; Public variables in this module
@@ -59,7 +59,7 @@
                              59 	.area _GSFINAL
                              60 	.area _GSINIT
                              61 ;	main.c 31
-                             62 ;	main.c 149
+                             62 ;	main.c 147
                              63 ;	genArrayInit
                              64 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 0 deSending: 0
    0000 21 00 00             65 	ld	hl,#_plainsGraphics
@@ -671,7 +671,7 @@
                             658 	
    019A C9                  659 	ret
    019B                     660 ___performantdelay_end:
-                            661 ;	main.c 46
+                            661 ;	main.c 44
                             662 ;	genLabel
                             663 ;	genFunction
                             664 ;	---------------------------------
@@ -680,14 +680,14 @@
    019B                     667 ___setupPlayer_start:
    019B                     668 _setupPlayer:
    019B E8 FD               669 	lda	sp,-3(sp)
-                            670 ;	main.c 47
+                            670 ;	main.c 45
                             671 ;	genPlus
                             672 ;	genPlusIncr
    019D 01 84 00            673 	ld	bc,#_player + 4
                             674 ;	genAssign (pointer)
    01A0 3E 50               675 	ld	a,#0x50
    01A2 02                  676 	ld	(bc),a
-                            677 ;	main.c 48
+                            677 ;	main.c 46
                             678 ;	genPlus
                             679 ;	AOP_STK for _setupPlayer_sloc0_1_0
                             680 ;	genPlusIncr
@@ -708,19 +708,19 @@
    01B3 56                  695 	ld	d,(hl)
    01B4 3E 82               696 	ld	a,#0x82
    01B6 12                  697 	ld	(de),a
-                            698 ;	main.c 49
+                            698 ;	main.c 47
                             699 ;	genPlus
                             700 ;	genPlusIncr
    01B7 21 86 00            701 	ld	hl,#_player + 6
                             702 ;	genAssign (pointer)
    01BA 36 10               703 	ld	(hl),#0x10
-                            704 ;	main.c 50
+                            704 ;	main.c 48
                             705 ;	genPlus
                             706 ;	genPlusIncr
    01BC 23                  707 	inc	hl
                             708 ;	genAssign (pointer)
    01BD 36 10               709 	ld	(hl),#0x10
-                            710 ;	main.c 52
+                            710 ;	main.c 50
                             711 ;	genIpush
                             712 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 1 deSending: 0
    01BF C5                  713 	push	bc
@@ -730,12 +730,12 @@
    01C4 CD 00 00            717 	call	_set_sprite_tile
    01C7 E8 02               718 	lda	sp,2(sp)
    01C9 C1                  719 	pop	bc
-                            720 ;	main.c 53
+                            720 ;	main.c 51
                             721 ;	genAssign (pointer)
    01CA 11 80 00            722 	ld	de,#_player
    01CD 3E 00               723 	ld	a,#0x00
    01CF 12                  724 	ld	(de),a
-                            725 ;	main.c 54
+                            725 ;	main.c 52
                             726 ;	genIpush
                             727 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 1 deSending: 0
    01D0 C5                  728 	push	bc
@@ -745,13 +745,13 @@
    01D5 CD 00 00            732 	call	_set_sprite_tile
    01D8 E8 02               733 	lda	sp,2(sp)
    01DA C1                  734 	pop	bc
-                            735 ;	main.c 55
+                            735 ;	main.c 53
                             736 ;	genPlus
                             737 ;	genPlusIncr
    01DB 21 81 00            738 	ld	hl,#_player + 1
                             739 ;	genAssign (pointer)
    01DE 36 02               740 	ld	(hl),#0x02
-                            741 ;	main.c 56
+                            741 ;	main.c 54
                             742 ;	genIpush
                             743 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 1 deSending: 0
    01E0 C5                  744 	push	bc
@@ -761,13 +761,13 @@
    01E5 CD 00 00            748 	call	_set_sprite_tile
    01E8 E8 02               749 	lda	sp,2(sp)
    01EA C1                  750 	pop	bc
-                            751 ;	main.c 57
+                            751 ;	main.c 55
                             752 ;	genPlus
                             753 ;	genPlusIncr
    01EB 21 82 00            754 	ld	hl,#_player + 2
                             755 ;	genAssign (pointer)
    01EE 36 01               756 	ld	(hl),#0x01
-                            757 ;	main.c 58
+                            757 ;	main.c 56
                             758 ;	genIpush
                             759 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 1 deSending: 0
    01F0 C5                  760 	push	bc
@@ -777,13 +777,13 @@
    01F5 CD 00 00            764 	call	_set_sprite_tile
    01F8 E8 02               765 	lda	sp,2(sp)
    01FA C1                  766 	pop	bc
-                            767 ;	main.c 59
+                            767 ;	main.c 57
                             768 ;	genPlus
                             769 ;	genPlusIncr
    01FB 21 83 00            770 	ld	hl,#_player + 3
                             771 ;	genAssign (pointer)
    01FE 36 03               772 	ld	(hl),#0x03
-                            773 ;	main.c 61
+                            773 ;	main.c 59
                             774 ;	genPointerGet
                             775 ;	AOP_STK for _setupPlayer_sloc0_1_0
                             776 ;	AOP_STK for _setupPlayer_sloc1_1_0
@@ -820,7 +820,7 @@
    021A E8 03               807 	lda	sp,3(sp)
    021C C9                  808 	ret
    021D                     809 ___setupPlayer_end:
-                            810 ;	main.c 64
+                            810 ;	main.c 62
                             811 ;	genLabel
                             812 ;	genFunction
                             813 ;	---------------------------------
@@ -829,14 +829,14 @@
    021D                     816 ___setupEnemy_start:
    021D                     817 _setupEnemy:
    021D E8 FD               818 	lda	sp,-3(sp)
-                            819 ;	main.c 65
+                            819 ;	main.c 63
                             820 ;	genPlus
                             821 ;	genPlusIncr
    021F 01 8C 00            822 	ld	bc,#_enemy + 4
                             823 ;	genAssign (pointer)
    0222 3E 50               824 	ld	a,#0x50
    0224 02                  825 	ld	(bc),a
-                            826 ;	main.c 66
+                            826 ;	main.c 64
                             827 ;	genPlus
                             828 ;	AOP_STK for _setupEnemy_sloc0_1_0
                             829 ;	genPlusIncr
@@ -857,19 +857,19 @@
    0235 56                  844 	ld	d,(hl)
    0236 3E 14               845 	ld	a,#0x14
    0238 12                  846 	ld	(de),a
-                            847 ;	main.c 67
+                            847 ;	main.c 65
                             848 ;	genPlus
                             849 ;	genPlusIncr
    0239 21 8E 00            850 	ld	hl,#_enemy + 6
                             851 ;	genAssign (pointer)
    023C 36 10               852 	ld	(hl),#0x10
-                            853 ;	main.c 68
+                            853 ;	main.c 66
                             854 ;	genPlus
                             855 ;	genPlusIncr
    023E 23                  856 	inc	hl
                             857 ;	genAssign (pointer)
    023F 36 10               858 	ld	(hl),#0x10
-                            859 ;	main.c 70
+                            859 ;	main.c 68
                             860 ;	genIpush
                             861 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 1 deSending: 0
    0241 C5                  862 	push	bc
@@ -879,7 +879,7 @@
    0246 CD 00 00            866 	call	_set_sprite_prop
    0249 E8 02               867 	lda	sp,2(sp)
    024B C1                  868 	pop	bc
-                            869 ;	main.c 71
+                            869 ;	main.c 69
                             870 ;	genIpush
                             871 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 1 deSending: 0
    024C C5                  872 	push	bc
@@ -889,7 +889,7 @@
    0251 CD 00 00            876 	call	_set_sprite_prop
    0254 E8 02               877 	lda	sp,2(sp)
    0256 C1                  878 	pop	bc
-                            879 ;	main.c 72
+                            879 ;	main.c 70
                             880 ;	genIpush
                             881 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 1 deSending: 0
    0257 C5                  882 	push	bc
@@ -899,7 +899,7 @@
    025C CD 00 00            886 	call	_set_sprite_prop
    025F E8 02               887 	lda	sp,2(sp)
    0261 C1                  888 	pop	bc
-                            889 ;	main.c 73
+                            889 ;	main.c 71
                             890 ;	genIpush
                             891 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 1 deSending: 0
    0262 C5                  892 	push	bc
@@ -909,7 +909,7 @@
    0267 CD 00 00            896 	call	_set_sprite_prop
    026A E8 02               897 	lda	sp,2(sp)
    026C C1                  898 	pop	bc
-                            899 ;	main.c 75
+                            899 ;	main.c 73
                             900 ;	genIpush
                             901 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 1 deSending: 0
    026D C5                  902 	push	bc
@@ -919,12 +919,12 @@
    0272 CD 00 00            906 	call	_set_sprite_tile
    0275 E8 02               907 	lda	sp,2(sp)
    0277 C1                  908 	pop	bc
-                            909 ;	main.c 76
+                            909 ;	main.c 74
                             910 ;	genAssign (pointer)
    0278 11 88 00            911 	ld	de,#_enemy
    027B 3E 05               912 	ld	a,#0x05
    027D 12                  913 	ld	(de),a
-                            914 ;	main.c 77
+                            914 ;	main.c 75
                             915 ;	genIpush
                             916 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 1 deSending: 0
    027E C5                  917 	push	bc
@@ -934,13 +934,13 @@
    0283 CD 00 00            921 	call	_set_sprite_tile
    0286 E8 02               922 	lda	sp,2(sp)
    0288 C1                  923 	pop	bc
-                            924 ;	main.c 78
+                            924 ;	main.c 76
                             925 ;	genPlus
                             926 ;	genPlusIncr
    0289 21 89 00            927 	ld	hl,#_enemy + 1
                             928 ;	genAssign (pointer)
    028C 36 07               929 	ld	(hl),#0x07
-                            930 ;	main.c 79
+                            930 ;	main.c 77
                             931 ;	genIpush
                             932 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 1 deSending: 0
    028E C5                  933 	push	bc
@@ -950,13 +950,13 @@
    0293 CD 00 00            937 	call	_set_sprite_tile
    0296 E8 02               938 	lda	sp,2(sp)
    0298 C1                  939 	pop	bc
-                            940 ;	main.c 80
+                            940 ;	main.c 78
                             941 ;	genPlus
                             942 ;	genPlusIncr
    0299 21 8A 00            943 	ld	hl,#_enemy + 2
                             944 ;	genAssign (pointer)
    029C 36 04               945 	ld	(hl),#0x04
-                            946 ;	main.c 81
+                            946 ;	main.c 79
                             947 ;	genIpush
                             948 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 1 deSending: 0
    029E C5                  949 	push	bc
@@ -966,13 +966,13 @@
    02A3 CD 00 00            953 	call	_set_sprite_tile
    02A6 E8 02               954 	lda	sp,2(sp)
    02A8 C1                  955 	pop	bc
-                            956 ;	main.c 82
+                            956 ;	main.c 80
                             957 ;	genPlus
                             958 ;	genPlusIncr
    02A9 21 8B 00            959 	ld	hl,#_enemy + 3
                             960 ;	genAssign (pointer)
    02AC 36 06               961 	ld	(hl),#0x06
-                            962 ;	main.c 84
+                            962 ;	main.c 82
                             963 ;	genPointerGet
                             964 ;	AOP_STK for _setupEnemy_sloc0_1_0
                             965 ;	AOP_STK for _setupEnemy_sloc1_1_0
@@ -1009,7 +1009,7 @@
    02C8 E8 03               996 	lda	sp,3(sp)
    02CA C9                  997 	ret
    02CB                     998 ___setupEnemy_end:
-                            999 ;	main.c 90
+                            999 ;	main.c 88
                            1000 ;	genLabel
                            1001 ;	genFunction
                            1002 ;	---------------------------------
@@ -1018,7 +1018,7 @@
    02CB                    1005 ___main_start:
    02CB                    1006 _main:
    02CB E8 FC              1007 	lda	sp,-4(sp)
-                           1008 ;	main.c 92
+                           1008 ;	main.c 90
                            1009 ;	genIpush
                            1010 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 0 deSending: 0
    02CD 21 00 00           1011 	ld	hl,#_plainsGraphics
@@ -1029,15 +1029,15 @@
                            1016 ;	genCall
    02D5 CD 00 00           1017 	call	_set_sprite_data
    02D8 E8 04              1018 	lda	sp,4(sp)
-                           1019 ;	main.c 94
+                           1019 ;	main.c 92
                            1020 ;	genCall
                            1021 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 0 deSending: 0
    02DA CD 9B 01           1022 	call	_setupPlayer
-                           1023 ;	main.c 95
+                           1023 ;	main.c 93
                            1024 ;	genCall
                            1025 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 0 deSending: 0
    02DD CD 1D 02           1026 	call	_setupEnemy
-                           1027 ;	main.c 97
+                           1027 ;	main.c 95
                            1028 ;	genAssign
    02E0 01 40 FF           1029 	ld	bc,#0xFF40
                            1030 ;	genAssign
@@ -1063,7 +1063,7 @@
    02F2 F6 02              1050 	or	a,#0x02
                            1051 ;	genAssign (pointer)
    02F4 02                 1052 	ld	(bc),a
-                           1053 ;	main.c 98
+                           1053 ;	main.c 96
                            1054 ;	genAssign
    02F5 01 40 FF           1055 	ld	bc,#0xFF40
                            1056 ;	genAssign
@@ -1089,7 +1089,7 @@
    0306 F6 80              1076 	or	a,#0x80
                            1077 ;	genAssign (pointer)
    0308 02                 1078 	ld	(bc),a
-                           1079 ;	main.c 105
+                           1079 ;	main.c 103
                            1080 ;	genLabel
    0309                    1081 00110$:
                            1082 ;	genIpush
@@ -1107,7 +1107,7 @@
    0317 AF                 1094 	xor	a,a
    0318 B1                 1095 	or	a,c
    0319 CA EA 03           1096 	jp	z,00113$
-                           1097 ;	main.c 108
+                           1097 ;	main.c 106
                            1098 ;	genCall
                            1099 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 0 deSending: 0
    031C CD 00 00           1100 	call	_joypad
@@ -1142,7 +1142,7 @@
    033D                    1129 00127$:
                            1130 ;	genGoto
    033D C3 85 03           1131 	jp	00106$
-                           1132 ;	main.c 111
+                           1132 ;	main.c 109
                            1133 ;	genLabel
    0340                    1134 00101$:
                            1135 ;	genPlus
@@ -1164,7 +1164,7 @@
    034A 77                 1151 	ld      (hl),a
                            1152 ; Removed redundent load
    034B 02                 1153 	ld	(bc),a
-                           1154 ;	main.c 112
+                           1154 ;	main.c 110
                            1155 ;	genPlus
                            1156 ;	genPlusIncr
    034C 01 85 00           1157 	ld	bc,#_player + 5
@@ -1189,10 +1189,10 @@
                            1176 ;	genCall
    035C CD F0 00           1177 	call	_moveGameCharacter
    035F E8 04              1178 	lda	sp,4(sp)
-                           1179 ;	main.c 113
+                           1179 ;	main.c 111
                            1180 ;	genGoto
    0361 C3 85 03           1181 	jp	00106$
-                           1182 ;	main.c 115
+                           1182 ;	main.c 113
                            1183 ;	genLabel
    0364                    1184 00102$:
                            1185 ;	genPlus
@@ -1216,7 +1216,7 @@
    036E 77                 1203 	ld      (hl),a
                            1204 ; Removed redundent load
    036F 02                 1205 	ld	(bc),a
-                           1206 ;	main.c 116
+                           1206 ;	main.c 114
                            1207 ;	genPlus
                            1208 ;	genPlusIncr
    0370 01 85 00           1209 	ld	bc,#_player + 5
@@ -1241,10 +1241,10 @@
                            1228 ;	genCall
    0380 CD F0 00           1229 	call	_moveGameCharacter
    0383 E8 04              1230 	lda	sp,4(sp)
-                           1231 ;	main.c 128
+                           1231 ;	main.c 126
                            1232 ;	genLabel
    0385                    1233 00106$:
-                           1234 ;	main.c 130
+                           1234 ;	main.c 128
                            1235 ;	genPlus
                            1236 ;	genPlusIncr
    0385 01 8D 00           1237 	ld	bc,#_enemy + 5
@@ -1266,7 +1266,7 @@
    038F 77                 1253 	ld      (hl),a
                            1254 ; Removed redundent load
    0390 02                 1255 	ld	(bc),a
-                           1256 ;	main.c 131
+                           1256 ;	main.c 129
                            1257 ;	genAssign
                            1258 ;	AOP_STK for _main_sloc0_1_0
                            1259 ;	AOP_STK for _main_sloc1_1_0
@@ -1313,7 +1313,7 @@
    03B3 CD F0 00           1300 	call	_moveGameCharacter
    03B6 E8 04              1301 	lda	sp,4(sp)
    03B8 C1                 1302 	pop	bc
-                           1303 ;	main.c 136
+                           1303 ;	main.c 134
                            1304 ;	genPointerGet
                            1305 ;	AOP_STK for _main_sloc2_1_0
    03B9 0A                 1306 	ld	a,(bc)
@@ -1338,11 +1338,11 @@
    03CC 7B                 1325 	ld	a,e
    03CD 92                 1326 	sub	a,d
    03CE DA DE 03           1327 	jp	c,00108$
-                           1328 ;	main.c 137
+                           1328 ;	main.c 135
                            1329 ;	genAssign (pointer)
    03D1 3E 00              1330 	ld	a,#0x00
    03D3 02                 1331 	ld	(bc),a
-                           1332 ;	main.c 138
+                           1332 ;	main.c 136
                            1333 ;	genPlus
                            1334 ;	genPlusIncr
    03D4 01 84 00           1335 	ld	bc,#_player + 4
@@ -1358,7 +1358,7 @@
    03DD 12                 1345 	ld	(de),a
                            1346 ;	genLabel
    03DE                    1347 00108$:
-                           1348 ;	main.c 143
+                           1348 ;	main.c 141
                            1349 ;	genIpush
                            1350 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 0 deSending: 0
    03DE 3E 01              1351 	ld	a,#0x01
