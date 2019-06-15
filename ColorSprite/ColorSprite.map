@@ -1,0 +1,238 @@
+AREA .  .ABS.
+	RADIX HEX
+	BASE 0000
+	SIZE 0000
+	ATTRIB ABS OVR
+	GLOBALS
+		l__HEAP	0000
+		l__BSEG	0000
+		l_.  .ABS.	0000
+		l__GSFINAL	0000
+		l__ISEG	0000
+		s_.  .ABS.	0000
+		s__HEADER	0000
+		l__XSEG	0000
+		.init	0000
+		l__OVERLAY	0000
+		l__LIT	0000
+		l__GSINITTAIL	0001
+		l__DATA	0042
+		l__GSINIT	0052
+		l__BSS	0059
+		l__BASE	0140
+		l__CODE	0192
+		l__HOME	01D3
+		l__HEADER	01E1
+		s__CODE	0200
+		s__HOME	0392
+		s__BASE	0565
+		s__LIT	06A5
+		s__GSINIT	06A5
+		s__GSINITTAIL	06F7
+		s__GSFINAL	06F8
+		.OAM	C000
+		s__DATA	C0A0
+		s__BSS	C0E2
+		s__HEAP	C13B
+		s__BSEG	C13B
+		s__ISEG	C13B
+		s__XSEG	C13B
+		s__OVERLAY	C13B
+		.STACK	E000
+		.refresh_OAM	FF80
+AREA _CODE
+	RADIX HEX
+	BASE 0200
+	SIZE 0192
+	ATTRIB REL CON
+	GLOBALS
+		_pause	0200
+		_spritepalette	0214
+		_backgroundpalette	0224
+		_main	022C
+		_set_bkg_palette_entry	02D7
+		_set_sprite_palette_entry	02FF
+		_cpu_slow	0327
+		_cpu_fast	0342
+		_cgb_compatibility	0349
+AREA _HEADER
+	RADIX HEX
+	BASE 0000
+	SIZE 01E1
+	ATTRIB ABS OVR
+	GLOBALS
+		_exit	01D2
+AREA _HOME
+	RADIX HEX
+	BASE 0392
+	SIZE 01D3
+	ATTRIB REL CON
+	GLOBALS
+		.set_mode	0392
+		.remove_VBL	03A2
+		.remove_LCD	03A8
+		.remove_TIM	03AE
+		.remove_SIO	03B4
+		.remove_JOY	03BA
+		.add_VBL	03C0
+		.add_LCD	03C6
+		.add_TIM	03CC
+		.add_SIO	03D2
+		.add_JOY	03D8
+		.remove_int	03DE
+		.add_int	03FE
+		.wait_vbl_done	041A
+		_wait_vbl_done	041A
+		_display_off	0431
+		.display_off	0431
+		.serial_IO	0452
+		_mode	0481
+		_get_mode	048A
+		_enable_interrupts	048F
+		_disable_interrupts	0491
+		_reset	0493
+		.reset	0493
+		_set_interrupts	0499
+		_remove_VBL	04A4
+		_remove_LCD	04AF
+		_remove_TIM	04BA
+		_remove_SIO	04C5
+		_remove_JOY	04D0
+		_add_VBL	04DB
+		_add_LCD	04E6
+		_add_TIM	04F1
+		_add_SIO	04FC
+		_add_JOY	0507
+		_clock	0512
+		__printTStates	051B
+		banked_call	051C
+		banked_ret	0535
+		__initrleblock	053E
+AREA _BASE
+	RADIX HEX
+	BASE 0565
+	SIZE 0140
+	ATTRIB REL CON
+	GLOBALS
+		.set_sprite_prop	0565
+		_set_sprite_prop	0572
+		_set_bkg_palette	057D
+		_set_sprite_palette	05A8
+		.mv_sprite	05D3
+		_move_sprite	05E2
+		_set_win_data	05EF
+		_set_bkg_data	05EF
+		_set_sprite_data	063C
+		.set_sprite_tile	066B
+		_set_sprite_tile	0678
+		.copy_vram	0683
+		_get_data	0692
+		_set_data	0692
+AREA _LIT
+	RADIX HEX
+	BASE 06A5
+	SIZE 0000
+	ATTRIB REL CON
+AREA _GSINIT
+	RADIX HEX
+	BASE 06A5
+	SIZE 0052
+	ATTRIB REL CON
+	GLOBALS
+		gsinit	06A5
+AREA _GSINITTAIL
+	RADIX HEX
+	BASE 06F7
+	SIZE 0001
+	ATTRIB REL CON
+AREA _GSFINAL
+	RADIX HEX
+	BASE 06F8
+	SIZE 0000
+	ATTRIB REL CON
+AREA _DATA
+	RADIX HEX
+	BASE C0A0
+	SIZE 0042
+	ATTRIB REL CON
+	GLOBALS
+		_LooneyTunesCGB	C0A0
+		_LooneyTunes	C0A2
+AREA _BSS
+	RADIX HEX
+	BASE C0E2
+	SIZE 0059
+	ATTRIB REL CON
+	GLOBALS
+		__cpu	C0E2
+		.mode	C0E3
+		__io_out	C0E4
+		__io_in	C0E5
+		__io_status	C0E6
+		.vbl_done	C0E7
+		__current_bank	C0E8
+		_sys_time	C0E9
+		.sys_time	C0E9
+		.int_0x40	C0EB
+		.int_0x48	C0FB
+		.int_0x50	C10B
+		.int_0x58	C11B
+		.int_0x60	C12B
+AREA _HEAP
+	RADIX HEX
+	BASE C13B
+	SIZE 0000
+	ATTRIB REL CON
+	GLOBALS
+		_malloc_heap_start	C13B
+AREA _OVERLAY
+	RADIX HEX
+	BASE C13B
+	SIZE 0000
+	ATTRIB REL CON
+AREA _ISEG
+	RADIX HEX
+	BASE C13B
+	SIZE 0000
+	ATTRIB REL CON
+AREA _BSEG
+	RADIX HEX
+	BASE C13B
+	SIZE 0000
+	ATTRIB REL CON
+AREA _XSEG
+	RADIX HEX
+	BASE C13B
+	SIZE 0000
+	ATTRIB REL CON
+MODULES
+	FILE /opt/gbdk/lib/small/asxxxx/gb/crt0.o
+		NAME Runtime
+	FILE LooneyTunes.o
+		NAME lcc338200
+	FILE main.o
+		NAME lcc338240
+LIBRARIES
+	LIBRARY /opt/gbdk/lib/small/asxxxx/gbz80/gbz80.lib
+		MODULE crt0_rle.o
+	LIBRARY /opt/gbdk/lib/small/asxxxx/gb/gb.lib
+		MODULE set_prop.o
+	LIBRARY /opt/gbdk/lib/small/asxxxx/gb/gb.lib
+		MODULE cgb.o
+	LIBRARY /opt/gbdk/lib/small/asxxxx/gb/gb.lib
+		MODULE mv_spr.o
+	LIBRARY /opt/gbdk/lib/small/asxxxx/gb/gb.lib
+		MODULE set_data.o
+	LIBRARY /opt/gbdk/lib/small/asxxxx/gb/gb.lib
+		MODULE set_spr.o
+	LIBRARY /opt/gbdk/lib/small/asxxxx/gb/gb.lib
+		MODULE cpy_data.o
+USERBASEDEF
+	_CODE=0x0200
+	_DATA=0xC0A0
+	_CODE_1=0x4000
+USERGLOBALDEF
+	.OAM=0xC000
+	.STACK=0xE000
+	.refresh_OAM=0xFF80
+	.init=0x0000

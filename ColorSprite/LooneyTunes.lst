@@ -1,0 +1,112 @@
+                              1 ;--------------------------------------------------------
+                              2 ; File Created by SDCC : FreeWare ANSI-C Compiler
+                              3 ; Version 2.3.1 Sat Jun 15 08:31:37 2019
+                              4 
+                              5 ;--------------------------------------------------------
+                              6 	.module lcc338200
+                              7 	
+                              8 ;--------------------------------------------------------
+                              9 ; Public variables in this module
+                             10 ;--------------------------------------------------------
+                             11 	.globl _LooneyTunes
+                             12 	.globl _LooneyTunesCGB
+                             13 ;--------------------------------------------------------
+                             14 ; special function registers
+                             15 ;--------------------------------------------------------
+                             16 ;--------------------------------------------------------
+                             17 ; special function bits 
+                             18 ;--------------------------------------------------------
+                             19 ;--------------------------------------------------------
+                             20 ; internal ram data
+                             21 ;--------------------------------------------------------
+                             22 	.area _DATA
+   0000                      23 _LooneyTunesCGB::
+   0000                      24 	.ds 2
+   0002                      25 _LooneyTunes::
+   0002                      26 	.ds 64
+                             27 ;--------------------------------------------------------
+                             28 ; overlayable items in internal ram 
+                             29 ;--------------------------------------------------------
+                             30 	.area _OVERLAY
+                             31 ;--------------------------------------------------------
+                             32 ; indirectly addressable internal ram data
+                             33 ;--------------------------------------------------------
+                             34 	.area _ISEG
+                             35 ;--------------------------------------------------------
+                             36 ; bit data
+                             37 ;--------------------------------------------------------
+                             38 	.area _BSEG
+                             39 ;--------------------------------------------------------
+                             40 ; external ram data
+                             41 ;--------------------------------------------------------
+                             42 	.area _XSEG
+                             43 ;--------------------------------------------------------
+                             44 ; global & static initialisations
+                             45 ;--------------------------------------------------------
+                             46 	.area _GSINIT
+                             47 	.area _GSFINAL
+                             48 	.area _GSINIT
+                             49 ;	LooneyTunes.c 26
+                             50 ;	LooneyTunes.c 42
+                             51 ;	genArrayInit
+                             52 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 0 deSending: 0
+   0000 21 00 00             53 	ld	hl,#_LooneyTunesCGB
+   0003 CD 00 00             54 	call	__initrleblock
+   0006 02                   55 	.db	2
+   0007 00 01                56 	.db	0x00, 0x01
+   0009 00                   57 	.db	0
+                             58 ;	LooneyTunes.c 31
+                             59 ;	LooneyTunes.c 42
+                             60 ;	genArrayInit
+                             61 ; _saveRegsForCall: sendSetSize: 0 deInUse: 0 bcInUse: 0 deSending: 0
+   000A 21 02 00             62 	ld	hl,#_LooneyTunes
+   000D CD 00 00             63 	call	__initrleblock
+   0010 40                   64 	.db	64
+   0011 00 F0 00 38 00 70    65 	.db	0x00, 0xF0, 0x00, 0x38, 0x00, 0x70, 0xF0, 0xF1
+        F0 F1
+   0019 70 63 10 03 10 03    66 	.db	0x70, 0x63, 0x10, 0x03, 0x10, 0x03, 0x10, 0x03
+        10 03
+   0021 10 03 10 07 20 1E    67 	.db	0x10, 0x03, 0x10, 0x07, 0x20, 0x1E, 0x20, 0x1C
+        20 1C
+   0029 1C 00 18 18 18 18    68 	.db	0x1C, 0x00, 0x18, 0x18, 0x18, 0x18, 0x7C, 0x7C
+        7C 7C
+   0031 6C 28 7E 7E 7C 24    69 	.db	0x6C, 0x28, 0x7E, 0x7E, 0x7C, 0x24, 0x7E, 0x70
+        7E 70
+   0039 9F 64 FB 0C 3C 24    70 	.db	0x9F, 0x64, 0xFB, 0x0C, 0x3C, 0x24, 0x7E, 0x66
+        7E 66
+   0041 7E 66 7E 66 7E 66    71 	.db	0x7E, 0x66, 0x7E, 0x66, 0x7E, 0x66, 0x7C, 0x64
+        7C 64
+   0049 3C 3C 18 18 DB 00    72 	.db	0x3C, 0x3C, 0x18, 0x18, 0xDB, 0x00, 0xFF, 0x00
+        FF 00
+   0051 00                   73 	.db	0
+                             74 ;--------------------------------------------------------
+                             75 ; Home
+                             76 ;--------------------------------------------------------
+                             77 	.area _HOME
+                             78 	.area _CODE
+                             79 ;--------------------------------------------------------
+                             80 ; code
+                             81 ;--------------------------------------------------------
+                             82 	.area _CODE
+                             83 	.area _CODE
+ASxxxx Assembler V01.75  (GameBoy Z80-like CPU), page 1.
+
+Symbol Table
+
+  1 _LooneyTunes                       0002 GR
+  1 _LooneyTunesCGB                    0000 GR
+    __initrleblock                     **** GX
+
+ASxxxx Assembler V01.75  (GameBoy Z80-like CPU), page 2.
+
+Area Table
+
+   0 _CODE                              size    0   flags 0
+   1 _DATA                              size   42   flags 0
+   2 _OVERLAY                           size    0   flags 0
+   3 _ISEG                              size    0   flags 0
+   4 _BSEG                              size    0   flags 0
+   5 _XSEG                              size    0   flags 0
+   6 _GSINIT                            size   52   flags 0
+   7 _GSFINAL                           size    0   flags 0
+   8 _HOME                              size    0   flags 0
