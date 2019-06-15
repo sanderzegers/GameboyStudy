@@ -209,9 +209,9 @@ MODULES
 	FILE /opt/gbdk/lib/small/asxxxx/gb/crt0.o
 		NAME Runtime
 	FILE LooneyTunes.o
-		NAME lcc338200
+		NAME lcc340070
 	FILE main.o
-		NAME lcc338240
+		NAME lcc340110
 LIBRARIES
 	LIBRARY /opt/gbdk/lib/small/asxxxx/gbz80/gbz80.lib
 		MODULE crt0_rle.o

@@ -1,6 +1,6 @@
 XL
 H 9 areas C global symbols
-M lcc338240
+M lcc340110
 S _set_sprite_prop Ref0000
 S _move_sprite Ref0000
 S _set_bkg_palette Ref0000
